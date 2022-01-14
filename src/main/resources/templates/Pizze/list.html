@@ -30,7 +30,8 @@
 				<td th:text="${item.ingredienti}"></td>
 				<td>
 							
-					<a class="btn btn-primary" th:href="@{|/pizze/edit/${item.id}|}"><i class="fas fa-edit"></i></a>
+					<a class="btn btn-primary" th:href="@{|/pizze/edit/${item.id}|}"><i class="fa fa-edit"></i></a>
+					<a class="btn btn-primary" th:href="@{|/pizze/delete/${item.id}|}"><i class="fa fa-trash-alt"></i></a>
 				</td>
 				
 			</tr>

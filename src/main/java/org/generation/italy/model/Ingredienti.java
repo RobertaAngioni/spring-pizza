@@ -30,6 +30,8 @@ public class Ingredienti {
 		this.nome = nome;
 	}
 	
-	
+	public String toString() {
+		return nome;
+	}
 
 }

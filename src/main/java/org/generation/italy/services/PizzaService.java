@@ -28,9 +28,13 @@ public class PizzaService {
 	}
 	
 	public Pizza update(Pizza pizza) {
-		String nome = repository.getById(null).getNome();
-		pizza.setNome(nome);
+		
+		
 		return repository.save(pizza);
+	}
+	
+	public void deleteById(Integer id) {
+		repository.deleteById(id);
 	}
 
 }

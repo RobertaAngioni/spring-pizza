@@ -45,6 +45,7 @@ public class PizzaController {
 	
 	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable("id") Integer id, Model model) {
+	model.addAttribute("edit", true);
 		model.addAttribute("pizza", service.getById(id));
 		model.addAttribute("ingredientiList", ingredientiService.findAllSortByNome());
 		return "/pizze/edit";
@@ -53,6 +54,12 @@ public class PizzaController {
 	@PostMapping("/edit/{id}")
 	public String doUpdate (@ModelAttribute("pizza") Pizza formPizza, Model model) {
 		service.update(formPizza);
+		return "redirect:/pizze";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String doDelete(Model model, @PathVariable("id") Integer id) {
+		service.deleteById(id);
 		return "redirect:/pizze";
 	}
 
