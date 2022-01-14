@@ -24,7 +24,7 @@ public class Pizza {
 	private String descrizione;
 	
 	@NotNull
-	private Double prezzo;
+	private Integer prezzo;
 	
 	
 	@ManyToMany
@@ -56,11 +56,11 @@ public class Pizza {
 		this.descrizione = descrizione;
 	}
 
-	public Double getPrezzo() {
+	public Integer getPrezzo() {
 		return prezzo;
 	}
 
-	public void setPrezzo(Double prezzo) {
+	public void setPrezzo(Integer prezzo) {
 		this.prezzo = prezzo;
 	}
 

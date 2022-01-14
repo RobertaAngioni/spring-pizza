@@ -18,8 +18,18 @@ public class PizzaService {
 		return repository.findAll(Sort.by("nome"));
 	}
 	
-	public Pizza save(Pizza pizza) {
+	public Pizza create(Pizza pizza) {
 		
+		return repository.save(pizza);
+	}
+	
+	public Pizza getById(Integer id) {
+		return repository.getById(id);
+	}
+	
+	public Pizza update(Pizza pizza) {
+		String nome = repository.getById(null).getNome();
+		pizza.setNome(nome);
 		return repository.save(pizza);
 	}
 

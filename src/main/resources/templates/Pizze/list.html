@@ -10,7 +10,7 @@
     <h1>Pizze</h1>
     <hr>
     <div class="mb-3">
-		<a class="btn btn-primary" th:href="@{/pizze/create}">Aggiungi Pizza</a>
+		<a class="btn btn-primary" th:href="@{/pizze/create}"><i class="fas fa-plus"></i>Aggiungi Pizza</a>
 	</div>
 	<table class="table" th:if="${list.size() > 0}">
 		<thead>
@@ -28,6 +28,10 @@
 				<td th:text="${item.descrizione}"></td>
 				<td th:text="${item.prezzo}"></td>
 				<td th:text="${item.ingredienti}"></td>
+				<td>
+							
+					<a class="btn btn-primary" th:href="@{|/pizze/edit/${item.id}|}"><i class="fas fa-edit"></i></a>
+				</td>
 				
 			</tr>
 		</tbody>
