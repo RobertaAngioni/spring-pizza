@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <div th:replace="/Fragments/resources :: headTags"></div>
   <title>Pizze</title>
 </head>
+<div class="container-fluid text-center">
+<img src="http://www.jerrysnugget.com/wp-content/uploads/2014/08/pizza-header.jpg" class="img-fluid" alt="Responsive image">
+</div  >
 <body>
-<nav th:replace="fragments/navbar :: navbar('pizze')"></nav>
+
   <div class="container">
-    <h1>Pizze</h1>
+    <h1 class="text-center text-uppercase text-danger">Pizze</h1 > 
     <hr>
     <div class="mb-3">
-		<a class="btn btn-primary" th:href="@{/pizze/create}"><i class="fas fa-plus"></i>Aggiungi Pizza</a>
+		<a class="btn btn-danger" th:href="@{/pizze/create}"><i class="fas fa-plus"></i> Aggiungi Pizza</a>
 	</div>
 	<table class="table" th:if="${list.size() > 0}">
 		<thead>
@@ -30,8 +34,8 @@
 				<td th:text="${item.ingredienti}"></td>
 				<td>
 							
-					<a class="btn btn-primary" th:href="@{|/pizze/edit/${item.id}|}"><i class="fa fa-edit"></i></a>
-					<a class="btn btn-primary" th:href="@{|/pizze/delete/${item.id}|}"><i class="fa fa-trash-alt"></i></a>
+					<a class="btn btn-success" th:href="@{|/pizze/edit/${item.id}|}"><i class="fas fa-edit"></i></a>
+					<a class="btn btn-danger" th:href="@{|/pizze/delete/${item.id}|}"><i class="fas fa-trash-alt"></i></a>
 				</td>
 				
 			</tr>

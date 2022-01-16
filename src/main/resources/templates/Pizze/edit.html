@@ -2,10 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<div th:replace="fragments/resources :: headTags"></div>
+		<div class="container-fluid text-center">
+<img src="http://www.jerrysnugget.com/wp-content/uploads/2014/08/pizza-header.jpg" class="img-fluid" alt="Responsive image">
+</div  >
 		<title>Modifica Pizza</title>
 	</head>
 	<body>
-		<nav th:replace="fragments/navbar :: navbar('pizze')"></nav>
+		
 		<div class="container">
 			<h1>Pizza</h1>
 			<hr/>
@@ -34,7 +37,8 @@
                     </div>
     
                     <div class="col-12">
-                       <button class="btn btn-primary" type="submit">Salva</button>
+                       <button class="btn btn-danger" type="submit"><i class="fas fa-check"></i> Salva</button>
+                       <a class="btn btn-success" th:href="@{/pizze}"><i class="fas fa-undo"></i> Torna Indietro</a>
                     </div>
                </div>
 			</div>
